@@ -1,0 +1,7 @@
+{
+    "name": "Pyjail 2",
+    "points": 400,
+    "description": "Electric Boogaloo",
+    "files": "pyjailtwo.py",
+    "flag": "maple{why_do3s_ech0_h4v3_th1s_funct1ionality}"
+}

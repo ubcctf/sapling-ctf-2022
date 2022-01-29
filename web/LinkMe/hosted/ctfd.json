@@ -1,0 +1,7 @@
+{
+    "name": "Link Me",
+    "points": 200,
+    "description": "CSPs. They are the way.",
+    "files": "MapleCTF_XSS_Guide.pdf",
+    "flag": "maple{1_H4ve_gr0ssly_misunderst0od_hoW_CsPs_w0rk}"
+}

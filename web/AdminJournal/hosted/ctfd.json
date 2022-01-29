@@ -1,0 +1,7 @@
+{
+    "name": "Doot Doot",
+    "points": 100,
+    "description": "Who left this insecure login panel here?",
+    "files": "AdminJournal.zip",
+    "flag": "maple{ess_skew_el_inject10nz_are_pr3tty_fun}"
+}

@@ -1,0 +1,2 @@
+# Cutoff
+A PNG with no file extension that has a cutoff flag towards the bottom of the image. Players will have to hex edit the headers to display the entire image. The hope is that players will learn how to deal with files with no extensions and how to hex edit a file. From what I have observed, an image viewer will either display a cutoff image or it will not display an image at all. The default viewer for Windows will display a cutoff image. It will be nice to know what the behaviour is for the default image viewer on MacOS and Ubuntu.

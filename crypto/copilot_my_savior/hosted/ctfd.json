@@ -1,0 +1,8 @@
+{
+    "name": "Copilot my savior",
+    "points": 50,
+    "description": "Copilot is great! Look at this great encryption function it wrote for me",
+    "flag": "maple{c0P1L07_b37R4Y3D_m3}",
+    "hints": ["We know that ??? should be a number between 0 and 255, and we can easily write a loop to test each of these possible values. But how do we know that when our guess is right? Well we know what a flag looks like don't we, it should have 'maple' inside of it!"],
+    "tags": ["beginner", "crypto"]
+}

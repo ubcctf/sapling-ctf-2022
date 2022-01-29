@@ -1,0 +1,1 @@
+cat payload.txt | ./whats_up_sys

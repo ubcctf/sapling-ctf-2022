@@ -1,0 +1,7 @@
+{
+  "name": "What is a Word",
+  "point": 100,
+  "description": "There is a flag hidden in this word file. But where is it? \n Note: The poem has nothing to do with the flag, it's just there to pad out the word file.",
+  "file": "what_is_a_word.docx",
+  "flag": "Maple{a_w0rd_is_on3_z1p!}"
+}

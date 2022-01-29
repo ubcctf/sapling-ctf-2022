@@ -1,0 +1,287 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/ricmoo/aes-js/e27b99df/index.js"></script>
+
+<style>
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+<h3>ECB Testing</h3>
+<h4>This is a simple tool for you to play around with ECB. This is only for testing and playing around!</h4>
+<h4>The encryptions and decryptions here use a different key than the server, so don't try that. There's also no flag or anything here so don't try to break anything</h4>
+<div class="row">
+<div class="column">
+    <form class="justPtxtForm">
+          <div>
+            <p> Encrypt a plaintext</p>
+            <label for="ptxt">Plaintext (string):</label>
+            <input type="text" name="ptxt">
+          </div>
+        
+          <div class="button">
+            <button type="submit">Encrypt</button>
+          </div>
+        </form>
+    <div id="results">
+    </div>
+
+    <form class="blocksForm">
+          <div id= ptxt_blocks>
+            <p> Encrypt one block at a time</p>
+            <p> Plaintext blocks (in hex):</p>
+            <input type="text" name="block0">
+          </div>
+
+        <div class="button">
+                <button id="add_block">Add block</button>
+        </div>
+
+          <div class="button">
+            <button type="submit">Encrypt</button>
+          </div>
+    </form>
+
+    <div id="blocks_results">
+    </div>
+
+</div>
+
+<div class="column">
+    <form class="justCtxtForm">
+          <div>
+            <p> Decrypt a ciphertext</p>
+            <label > Ciphertext (hex):</label>
+            <input type="text" name="ctxt">
+          </div>
+        
+          <div class="button">
+            <button type="submit">Decrypt</button>
+          </div>
+        </form>
+    <div id="ctxt_results">
+    </div>
+
+    <form class="ctxtBlocksForm">
+          <div id= ctxt_blocks>
+            <p> Decrypt one block at a time</p>
+            <p> Ciphertext blocks (in hex):</p>
+            <input type="text" name="block0">
+          </div>
+
+        <div class="button">
+                <button id="add_ctxt_block">Add block</button>
+        </div>
+
+          <div class="button">
+            <button type="submit">Decrypt</button>
+          </div>
+    </form>
+
+    <div id="ctxt_blocks_results">
+    </div>
+
+</div>
+</div>
+
+<script>
+    // hardcoded key so people can just open multiple tabs
+    const key = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    function pad(ptxt) {
+        const padding_v = (((16 - ptxt.byteLength) % 16) + 16) % 16
+        const result = new Uint8Array(ptxt.byteLength + padding_v)
+        result.set(ptxt)
+        for (let index = 0; index < padding_v; index++) {
+            result.set([padding_v], ptxt.byteLength + index);
+        }
+        console.log("padding:", ptxt, padding_v, result)
+        return result
+    }
+
+    function strip_padding(msg) {
+        const padding_v = msg[msg.byteLength - 1];
+        if (padding_v >= 16) {
+            return msg;
+        }
+
+        for (let index = msg.byteLength-1; index >= msg.byteLength - padding_v; index--) {
+            const element = msg[index];
+            if (element != padding_v) {
+                return msg;
+            }
+        }
+
+        return msg.slice(0, msg.byteLength - padding_v);
+    }
+
+    function encrypt(padded_msg) {
+        var aesEcb = new aesjs.ModeOfOperation.ecb(key);
+        var encryptedBytes = aesEcb.encrypt(padded_msg);
+        return encryptedBytes
+    }
+
+    function decrypt(ctxt) {
+        var aesEcb = new aesjs.ModeOfOperation.ecb(key);
+        var ptxt = aesEcb.decrypt(ctxt);
+        return ptxt
+    }
+
+    function blockify(msg) {
+        var blocks = []
+        for (let index = 0; index < msg.length; index+=16) {
+            var block = []
+            for (let i = 0; i < 16; i++) {
+                block.push(msg[index+i])
+            }
+            blocks.push(block)
+        }
+        return blocks
+    }
+</script>
+
+<script>
+    function reset_res(parent_id) {
+        const parent = document.getElementById(parent_id)
+        parent.innerHTML = '';
+    }
+
+    function render_block(data, parent_id, msg_1, msg_2, toStringFn) {
+        const parent = document.getElementById(parent_id)
+
+        const title = document.createElement("p");
+        title.appendChild(document.createTextNode(msg_1))
+        parent.appendChild(title)
+
+        for (const block of blockify(data)) {
+            const x = document.createElement("p");
+            // const text = document.createTextNode(block.toString());
+            const text = document.createTextNode(toStringFn(block));
+            x.appendChild(text)
+            parent.appendChild(x)
+        }
+
+        const m2 = document.createElement("p");
+        m2.appendChild(document.createTextNode(msg_2))
+        m2.appendChild(document.createTextNode(toStringFn(data)))
+        parent.appendChild(m2)
+    }
+
+    function render_ptxt_res(padded, enc, parent_id) {
+        reset_res(parent_id)
+        render_block(padded, parent_id, "Plaintext blocks (hex)", "Full plaintext (hex): ", aesjs.utils.hex.fromBytes)
+        render_block(enc, parent_id, "Ciphertext blocks (hex)", "Full ciphertext (hex): ", aesjs.utils.hex.fromBytes)
+    }
+
+    function render_ctxt_res(enc, ptxt_bytes, parent_id) {
+        reset_res(parent_id)
+        render_block(enc, parent_id, "Ciphertext blocks (hex)", "Full ciphertext (hex): ", aesjs.utils.hex.fromBytes)
+        render_block(ptxt_bytes, parent_id, "Plaintext blocks (string)", "Full plaintext (string): ", aesjs.utils.utf8.fromBytes)
+    }
+
+    function do_encryption(ptxt, parent_id) {
+        console.log("encrypting", ptxt)
+        const padded = pad(ptxt);
+        const enc = encrypt(padded)
+        const enc_hex = aesjs.utils.hex.fromBytes(enc)
+        console.log(enc_hex)
+        render_ptxt_res(padded, enc, parent_id)
+    }
+
+    function do_decryption(ctxt, parent_id) {
+        console.log("decrypting", ctxt)
+        const ptxt_padded = decrypt(ctxt)
+        const ptxt_bytes = strip_padding(ptxt_padded)
+        console.log(aesjs.utils.utf8.fromBytes(ptxt_padded))
+        render_ctxt_res(ctxt, ptxt_bytes, parent_id)
+    }
+
+
+</script>
+<script>
+    $(".justPtxtForm").submit(function (event) {
+        event.preventDefault();
+        const ptxt_s = $(this).serializeArray()[0]['value']
+        const ptxt = aesjs.utils.utf8.toBytes(ptxt_s)
+        do_encryption(ptxt, "results")
+
+    });
+</script>
+
+<script>
+    $(".blocksForm").submit(function (event) {
+        event.preventDefault();
+        const data = $(this).serializeArray()
+        var ptxt_hex = "";
+        for (const block of data) {
+            ptxt_hex += block['value']
+        }
+        console.log(data, ptxt_hex)
+        const res = Uint8Array.from(aesjs.utils.hex.toBytes(ptxt_hex));
+        do_encryption(res, "blocks_results")
+        
+    });
+</script>
+
+<script>
+    $(".justCtxtForm").submit(function (event) {
+        event.preventDefault();
+        const ctxt_h = $(this).serializeArray()[0]['value']
+        const ctxt = aesjs.utils.hex.toBytes(ctxt_h)
+        do_decryption(ctxt, "ctxt_results")
+
+    });
+</script>
+
+<script>
+    $(".ctxtBlocksForm").submit(function (event) {
+        event.preventDefault();
+        const data = $(this).serializeArray()
+        var ctxt_hex = "";
+        for (const block of data) {
+            ctxt_hex += block['value']
+        }
+        const res = Uint8Array.from(aesjs.utils.hex.toBytes(ctxt_hex));
+        do_decryption(res, "ctxt_blocks_results")
+        
+    });
+</script>
+
+
+<script>
+    var num_blocks = 1
+    var num_ctxt_blocks = 1
+    $( "#add_block").click(function (event) {
+        const parent = document.getElementById("ptxt_blocks")
+        const new_field = document.createElement("input")
+        new_field.setAttribute("name", "block" + (num_blocks+1))
+        num_blocks = num_blocks + 1
+        
+        // const text = document.createTextNode("nyaa")
+        // new_field.appendChild(text)
+
+        parent.appendChild(new_field)
+        // alert("hi")
+        event.preventDefault();
+    })
+
+    $( "#add_ctxt_block").click(function (event) {
+        const parent = document.getElementById("ctxt_blocks")
+        const new_field = document.createElement("input")
+        new_field.setAttribute("name", "block" + (num_ctxt_blocks+1))
+        num_blocks = num_blocks + 1
+        
+        // const text = document.createTextNode("nyaa")
+        // new_field.appendChild(text)
+
+        parent.appendChild(new_field)
+        // alert("hi")
+        event.preventDefault();
+    })
+</script>

@@ -1,0 +1,7 @@
+{
+    "name": "Poem Me",
+    "points": 150,
+    "description": "I figured out how to sanitize my input properly, so I don't have to worry about XSS exploits. I'm secure now!",
+    "files": "MapleCTF_XSS_Guide.pdf",
+    "flag": "maple{why_m4ke_ur_0wn_5anitizers_wh3n_D0mpur1fy_ex1sts}"
+}

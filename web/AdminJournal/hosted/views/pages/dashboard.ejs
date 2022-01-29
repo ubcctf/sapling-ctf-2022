@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+  <style>
+    .jumbotron, .column, .col-sm-8, .col-sm-4, .well{
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+    }
+  </style>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="column">
+  <div class="col-sm-8">
+    <div class="jumbotron">
+      <h1>Singular Note Database</h1>
+
+        <div class="col-sm-4">
+    <div class="well">
+      <h3> Description </h3>
+      <h4> <%= notetitle %> </h4>
+      <h5><%= note %></h5>
+    </div>
+  </div>
+    </div>
+  </div>
+
+
+</div>
+</main>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

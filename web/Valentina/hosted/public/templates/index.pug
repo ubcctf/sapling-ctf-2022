@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    script(src="/js/index_script.js")
+
+    style(type="text/css").
+      * {
+        text-align: center;
+      }
+      #submitSuccess {
+        display: none;
+      }
+    title Valentina's Gallery
+  body
+
+  h1 #{msg}
+
+  h5 Here is where all my lovingly curated nature pictures from around the internet reside. If you like my selection, let me know! 
+  a(class="button" href="/add_review") Review
+  br
+
+div.col
+  div.col-md-4
+    img(style="max-width: 750px; " src='https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80')
+  div.row-md-4
+    img(style="max-width: 750px;" src='https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80')
+  div.col-md-4
+    img(style="max-width: 750px;"  src='https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')
+  h5 Report site issues here
+  form(action="/report",  method="post", id="reportform")
+        input(type="text", id="site", name="site" placeholder="site" style="width: 300px;")
+        br
+        input(type="submit", value="send")
+        br
+        p(id="submitSuccess") Link sent

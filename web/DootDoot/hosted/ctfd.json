@@ -1,0 +1,7 @@
+{
+    "name": "Doot Doot",
+    "points": 50,
+    "description": "I found this weird penguin blog or fanpage, and it's actually pretty insecure. I was able to leak the server source code, is there anything else you can exploit in it?",
+    "files": "server.py",
+    "flag": "maple{Pingu_s4yz_N00t_No0T}"
+}

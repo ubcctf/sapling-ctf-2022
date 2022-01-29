@@ -1,0 +1,13 @@
+{
+    "name": "One two three",
+    "points": 150,
+    "description": "Ok so ECB mode was a bust, what else can we try?",
+    "flag": "maple{ctr_1s_g00d_bu7_d0n7_r3p347_n0nc35}",
+    "hints": [
+        "Look carefully at the encrypt function. It generates the keystream fully independently of the plaintext! This means that the keystream is identical for each plaintext. Knowing this, what can you do?",
+        "We know that the keystream is the same for each plaintext, but what does this mean? This means that the first byte of each line is XORd against the same byte, ie the first byte of the keystream. Same for the second byte of each line and so on. This is real similar to the copilot challenge isn't it! You can guess bytes in the same way, but you need to be smarter about figuring out when a guess is 'correct'",
+        "How can we tell when a guess is correct? Well we know that the text is english. So can assign each guess a 'score' based on how 'english' the result is. For example, adding points for letters, numbers, punctuation, and whitespace, while subtracting points for each byte that doesn't fit."
+    ],
+    "locked_behind": "cut-and-paste", 
+    "tags": ["crypto"]
+}

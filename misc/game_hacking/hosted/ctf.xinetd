@@ -1,0 +1,12 @@
+service ctf
+{
+    type            = UNLISTED
+    socket_type     = stream
+    wait            = no
+    user            = ctf
+    server          = /checkreplay.sh
+    per_source      = 1
+    instances       = 20
+    port            = 1337
+    banner_fail     = /home/ctf/banner_fail.txt
+}

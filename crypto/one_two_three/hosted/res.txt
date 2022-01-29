@@ -1,0 +1,12 @@
+TJe flag is maple{ctr_1s_g00d_bu7_d0n7_r3p347_n0nc35}
+LKke OFB, counter mode turns a block cipher into a stream cipher. 
+IV generates the next keystream block by encrypting successive values of a "counter". ITJe counter can be any function which produces a sequence which is guaranteed not to 
+rGpeat for a long time, although an actual increment-by-one counter is the simplest 
+aLd most popular. The usage of a simple deterministic input function used to be contro5e7sialx 
+cPitics argued that "deliberately exposing a cryptosystem to a known systematic input IrGpresents an unnecessary risk."[30] However, today CTR mode is widely accepted and an: OpPoblems are considered a weakness of the underlying block cipher, which is expected t, ObG secure regardless of systemic bias in its input.[31] Along with CBC, CTR mode is on& OoD two block cipher modes recommended by Niels Ferguson and Bruce Schneier.[32]
+CvR mode was introduced by Whitfield Diffie and Martin Hellman in 1979.[31]
+CvR mode has similar characteristics to OFB, but also allows a random access property IdWring decryption. CTR mode is well suited to operate on a multi-processor machine whe1ee
+bNocks can be encrypted in parallel. Furthermore, it does not suffer from the short-cy l  pro!lem thaT  kf> fo c? I gfUAwz ID the IV/nonce is random, then they can be combined with the counter using any invert*b)e op&ration *(Aoncatenation, addition, or XOR) to produce the actual unique counter block for encry3t,on. IIL case of a non-random nonce (such as a packet counter), the nonce and counter shouldcb  con atenateD I(G.g., storing the nonce in the upper 64 bits and the counter in the lower 64 bits of " t28-b*t countErchdq"k k ASKmply adding or XORing the nonce and counter into a single value would break the secu1i1y
+uLder a chosen-plaintext attack in many cases, since the attacker may be able to manip6l$te 
+tJe entire IV–counter pair to cause a collision. Once an attacker controls the IV– o0ntercpair 
+aLd plaintext, XOR of the ciphertext with the known plaintext would yield a value thato 2hen IXmRed with the ciphertext of the other block sharing the same IV–counter pair, wouldcd cryp7 that bLo a&Er4TONMte that the nonce in this diagram is equivalent to the initialization vector (IV) inct-e ot+er diagRa.y&>KHMwever, if the offset/location information is corrupt, it will be impossible to parti"l)y re over suChcnij  m0ektiFQ kR BZYOqLdyKMQAYHnLzYhXaxjZQ

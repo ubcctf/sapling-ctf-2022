@@ -1,0 +1,15 @@
+{
+  "name": "SuperCereal",
+  "version": "1.0.0",
+  "author": "Vie",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "cookie-parser": "^1.4.5",
+    "node-serialize": "^0.0.4",
+    "ejs": "^3.1.6"
+  }
+}

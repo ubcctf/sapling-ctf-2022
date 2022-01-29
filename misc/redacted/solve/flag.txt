@@ -1,0 +1,17 @@
+regex: (maple{c0rp0r[a4]t3_gr4d3_[i1]nf0rm[a4]t[i1]0n_s3cur[i1]ty})
+
+test cases:
+maple{c0rp0r4t3_gr4d3_1nf0rm4t10n_s3cur1ty}
+maple{c0rp0r4t3_gr4d3_1nf0rm4t10n_s3curity}
+maple{c0rp0r4t3_gr4d3_1nf0rmat10n_s3cur1ty}
+maple{c0rp0r4t3_gr4d3_1nf0rmat10n_s3curity}
+maple{c0rp0r4t3_gr4d3_1nf0rm4ti0n_s3cur1ty}
+maple{c0rp0r4t3_gr4d3_1nf0rm4ti0n_s3curity}
+maple{c0rp0r4t3_gr4d3_1nf0rmati0n_s3cur1ty}
+maple{c0rp0r4t3_gr4d3_1nf0rmati0n_s3curity}
+
+here's ray's first set of guesses
+maple{cllrp0r4t3_p4d3_1nf0rmati0n_s3curity}
+maple{c0rp0r4t3_p4id3_1nf0rmati0n_s3curity}
+maple{c0rp0r4t3_m4id3_1nf0rmati0n_s3curity}
+maple{c0rp0r4t3_gr4d3_1nf0rmati0n_s3curity}

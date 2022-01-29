@@ -1,0 +1,7 @@
+{
+    "name": "MCA",
+    "points": 100,
+    "description": "Have you seen this site? It apparently used to be a top secret shadowy organization website but then it got purged to be some random blog. But I heard that those who tried to get rid of it didn't do so good of a job covering their tracks...",
+    "files": "MapleCTF_HTTP_Guide.pdf",
+    "flag": "maple{y3s_I_kn0w__th4t_r3stful_4PIs_dont_w0rk_lyk_d1s}"
+}

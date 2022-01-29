@@ -1,0 +1,7 @@
+{
+    "name": "Color Me",
+    "points": 100,
+    "description": "Check out my new project! Colours as a service. Specify any colour you want! I wonder if there are any exploits in my site...",
+    "files": "MapleCTF_XSS_Guide.pdf",
+    "flag": "maple{0ops_i_f0rgot_about_xss}"
+}

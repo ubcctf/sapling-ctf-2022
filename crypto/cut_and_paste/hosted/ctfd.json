@@ -1,0 +1,9 @@
+{
+    "name": "Cut and paste",
+    "points": 100,
+    "description": "copy paste the description from here please: https://github.com/ubcctf/ctf-challenges/issues/52",
+    "flag": "maple{ecb_lets_you_go_snip_snip!}",
+    "hints": [],
+    "locked_behind": "copilot my savior",
+    "tags": ["beginner", "crypto"]
+}

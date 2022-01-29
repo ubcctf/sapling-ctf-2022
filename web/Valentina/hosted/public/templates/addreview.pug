@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+    script(src="/js/review_script.js")
+
+    style(type="text/css").
+      * {
+        text-align: center;
+      }
+      background {
+      }
+      #submitSuccessMessage {
+        display: none;
+      }
+
+    title Add A Review
+  body(style="background-color:light blue;")
+    h1 Submit a review of my work here!
+    form(action="/add_review",  method="post", id="reviewform")
+        input(type="text", id="name", name="name" placeholder="name" style="width: 300px;")
+        br
+        input(type="text", id="message", name="message" placeholder="message" style="width: 300px;")
+        br
+        input(type="number", id="stars", name="stars" placeholder="5 stars" style="width: 300px;" min="1" max="5")
+        br
+        input(type="submit", value="send")
+    br
+    p(id="submitSuccessMessage") Form submission succesful!

@@ -1,0 +1,7 @@
+{
+    "name": "Super Cereal",
+    "points": 250,
+    "description": "I love cereal so much, I want to know everyone's favourite. Could you add yours to my site here? NOTE: The challenge is running on a limited container. The commands `bash`, `zsh`, or other alternative shells are not available. ",
+    "files": "SuperCereal_Dist.zip",
+    "flag": "maple{0H_w41t_you_meant_ser1al_not_cer3al?}"
+}

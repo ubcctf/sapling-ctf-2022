@@ -1,0 +1,11 @@
+{
+    "name": "Propagation",
+    "points": 150,
+    "description": "Ok so ECB mode was a bust, what else can we try? What about trying to chain blocks?",
+    "flag": "maple{C1Ph3Rt3xt_t4mp3r1n}",
+    "hints": [
+        "What happens if you modify the first ciphertext block slightly? The AES decryption of that block will be completely scrambled, but what happens to the decryption of the _next_ block? Similarly, what happens after you modify the IV?",
+        "Remember the XOR of two identical values is zero. If you know that A XOR B = C and you know C, you know that this (A XOR C) XOR B will just be null bytes. Now what if you want something other than null bytes? What do you need to do?"
+    ],
+    "locked_behind": "cut-and-paste"
+}

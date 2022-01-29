@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Links As A Service</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container">
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Welcome to Links As A Service!</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+  </ul>
+  </nav>
+</header>
+
+<main>
+  <br>
+  <div class="jumbotron" >
+    <h1>Link's Diaries</h1>
+    <br>
+    <h2>XSS attacks have long plagued my personal projects. However, I found <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">a way</a> to end them once and for all.</h2>
+
+  <a href='/TwilightLink' id=col>Twilight</a>
+  <br>
+  <a href='/WindWakerlink' id=col>Wind</a>
+  <br>
+  <a href='/MajorasMasklink' id=col>Majora</a>
+  <br>
+  <a href='/BOTWLink' id=col>Wild</a>
+
+  <h4> Something wrong with Link? let us know! Submit a URL to us and an admin will check it out. </h4>
+
+  <form action="/report" method=POST>
+    <label for="url">Submit URL here</label>
+    <input type="text" id="site" name="site"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  </div>
+</main>
+
+<br>
+
+<footer>
+  <p class="text-center text-muted">&copy; Copyright 2022 Baple Macon</p>
+</footer>
+
+</body>
+</html>

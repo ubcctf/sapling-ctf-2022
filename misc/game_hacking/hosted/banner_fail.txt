@@ -1,0 +1,6 @@
+
+*--------------------------------------*
+|     Error: Too many connections.     |
+|  Only one connection is allowed at   |
+|               a time.                |
+*--------------------------------------*

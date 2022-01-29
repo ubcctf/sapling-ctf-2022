@@ -1,0 +1,15 @@
+regex: ([mM][aA]p[lL][eE]{mI[S5]c_bAc[O0]n_Fr[O0]M_[O0]utER_[S5]pAc3})
+note: the regex is a little fucky because the prefix is a mixture of caps and lowercase, by necessity
+
+test cases:
+maple{mI5c_bAc0n_Fr0M_0utER_5pAc3}
+MApLE{mI5c_bAc0n_Fr0M_0utER_5pAc3}
+MApLE{mISc_bAc0n_Fr0M_0utER_SpAc3}
+MApLE{mI5c_bAcOn_FrOM_OutER_5pAc3}
+MApLE{mISc_bAcOn_FrOM_OutER_SpAc3}
+MAplE{mI5c_bAc0n_Fr0M_0utER_5pAc3}
+MAplE{mISc_bAc0n_Fr0M_0utER_SpAc3}
+MAplE{mI5c_bAcOn_FrOM_OutER_5pAc3}
+MAplE{mISc_bAcOn_FrOM_OutER_SpAc3}
+
+MAp E{mI c_bAc n_Fr M_ utER_ pAc3}

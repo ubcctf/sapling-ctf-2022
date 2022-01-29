@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+
+</head>
+
+
+<body class="container">
+
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+    
+    <!-- Custom styles for this template -->
+  <link href="/css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form action="/login" method=POST>
+    <div class="form-floating">
+      <input type="text" name="username" placeholder="Username">
+      <label for="Username"></label>
+    </div>
+    <div class="form-floating">
+      <input type="text"  name = "password" placeholder="Password">
+      <label for="Password"></label>
+    </div>
+    <div class="form-floating">
+    <input type="submit" value="Submit">
+  </div>
+    
+  </form>
+</main>
+
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+
+
+</body>
+</html>
