@@ -1,0 +1,1 @@
+If you use Ghidra then you can see that it takes an input and XORs it with a smaller array. Then it takes the result and compares it with a bigger array. The bigger array is the encrypted flag and the smaller array is the key. Since the inverse of XOR is XOR then you can take the encrypted flag and XOR it with the key to get the flag.
