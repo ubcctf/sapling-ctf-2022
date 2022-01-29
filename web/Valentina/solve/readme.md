@@ -3,7 +3,7 @@ Exploit: Prototype Pollution and XSS
 
 The npm library `lodash` is very old - the specific version that Valentina is using is vulnerable to prototype pollution. 
 
-TL;DR - prototype pollution is a JavaScript-soecific vulnerability that abuses prototypal inheritance to poison the base JS object with properties you want. This affects ALL objects.
+TL;DR - prototype pollution is a JavaScript-specific vulnerability that abuses prototypal inheritance to poison the base JS object with properties you want. This affects ALL objects.
 
 2 potential ways to solve. 
 
