@@ -1,7 +1,12 @@
 # CTF challenges
 
 
-Once your challenge is ready for testing, organize it into the following format
+The repository holding all challenges for MapleCTF 2022: UBC version. 
+
+
+
+
+Format:
 ```
 /category/challenge-name/
   - readme.md 
