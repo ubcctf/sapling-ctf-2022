@@ -1,5 +1,7 @@
 # (Link Diaries as a Service) Link Me
 
+This challenge is based off a principle/idea that I saw in DiceCTF's 2021 CTF - a challenge called "babier CSP": https://ctftime.org/task/14695
+
 ## Instructions for hosting
 
 1. There's a `start.sh` script you can run that will simply call the correct docker build and run commands.
