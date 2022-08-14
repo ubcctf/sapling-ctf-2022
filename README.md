@@ -1,7 +1,7 @@
 # CTF challenges
 
 
-The repository holding all challenges for MapleCTF 2022: UBC version. 
+The repository holding all challenges for Sapling CTF 2022, a local CTF @ UBC hosted by Maple Bacon. 
 
 
 
